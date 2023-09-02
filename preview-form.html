@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Preview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="formRenderer">
+        <h1>Form Preview</h1>
+        <form id="previewForm">
+            <!-- Questions will be displayed here -->
+        </form>
+    </div>
+
+    <script>
+        // JavaScript logic for the preview page
+        const previewForm = document.getElementById('previewForm');
+        
+        // Extract questions data from URL parameter and parse it as JSON
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionsData = urlParams.get('questions');
+
+        if (questionsData) {
+            const decodedQuestionsData = decodeURIComponent(questionsData);
+            const questions = JSON.parse(decodedQuestionsData);
+
+            // Render the questions in the preview form
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <label for="question${index}">${question.text}</label>
+                    <input type="text" id="answer${index}" placeholder="Enter your answer">
+                `;
+
+                if (question.type === 'multiple-choice') {
+                    questionDiv.innerHTML += `
+                    <input type="radio" name="answer${questionCount}" value="option1" id="option1${questionCount}">
+                    <label for="option1${questionCount}">Yes</label>
+                    <input type="radio" name="answer${questionCount}" value="option2" id="option2${questionCount}">
+                    <label for="option2${questionCount}">No</label>
+                    `;
+                }
+
+                previewForm.appendChild(questionDiv);
+            });
+        }
+    </script>
+</body>
+</html>

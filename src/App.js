@@ -1,7 +1,6 @@
 import { Fragment } from "react";
-import FormBuilder from "@components/FormBuilder";
 import "react-nestable/dist/styles/index.css";
-const App = () => {
+const App  => {
   return (
     <Fragment>
         <FormBuilder />

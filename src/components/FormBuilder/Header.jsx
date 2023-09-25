@@ -7,12 +7,12 @@ const Header = ({ title, description, setTitle, setDescription }) => {
   return (
     <Fragment>
       <Box sx={{ mb: 3 }}>
-        <Paper elevation={2} sx={{ p: 3, borderTop: "8px solid #9C27B0" }}>
+        <Paper elevation={2} sx={{ p: 3, borderTop: "8px solid white" }}>
           <TextField
             defaultValue={title}
             onBlur={(e) => setTitle(e.target.value)}
             variant="standard"
-            placeholder="Form Title"
+            placeholder="Tenant Ref"
             name="title"
             sx={{ mb: 3 }}
             fullWidth

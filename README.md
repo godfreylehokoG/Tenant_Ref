@@ -40,6 +40,5 @@ This project is [MIT](#) licensed.
 
 - [OpenAI](https://www.openai.com/) for their assistance in code generation.
 
----
-
-Note: You should replace placeholders like `your-username` and URLs denoted by `#` with the appropriate values/links relevant to your project.
+![Formbuilder page](/Screenshot%202023-10-18%20021957.png)
+![Preview page](/Screenshot%202023-10-18%20022352.png)

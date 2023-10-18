@@ -20,8 +20,10 @@ import Layout from './elements/layout'
 import { formEl } from "./constants.js";
 //Components
 import Header from "./Header";
+import { useNavigate } from 'react-router-dom';
 
 const FormBuilder = () => {
+  const navigate = useNavigate();
   const initVal = formEl[0]?.value;
 
   //State
@@ -177,6 +179,12 @@ const FormBuilder = () => {
     setData(newArr);
   };
 
+   //Function to handle submission
+   const handleSubmit = () => {
+    navigate('/preview', { state: { formData: data } });
+};
+
+
   //Render items
   const renderElements = ({ item }) => {
     switch (item.type) {
@@ -287,6 +295,7 @@ const FormBuilder = () => {
           </Tooltip>
         </Grid>
       </Grid>
+      <button onClick={handleSubmit}>Submit</button>
     </Fragment>
   );
 };

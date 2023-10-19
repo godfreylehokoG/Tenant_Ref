@@ -6,7 +6,10 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
-
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 //Icons
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 //Form Elements
@@ -267,52 +270,68 @@ const FormBuilder = () => {
   };
 
   console.log(data);
-
+  
   return (
     <Fragment>
-      <Grid container spacing={1} direction="column" style={{ minHeight: '100vh' }}>
-        
-        {/* Your main content */}
-        <Grid item container direction="row" justifyContent="center" flex={1}>
-          <Grid item md={6}>
-            <Header
-              title={title}
-              setTitle={setTitle}
-              description={description}
-              setDescription={setDescription}
-            />
-            <Nestable
-              items={items}
-              renderItem={renderElements}
-              maxDepth={1}
-              onChange={handleOnChangeSort}
-            />
+      {/* Navbar */}
+      <AppBar position="static" color="default">
+              <Toolbar>
+                <Grid container justifyContent="center">
+                  <Grid item>
+                    <Typography variant="h6">
+                      Tenant Reference
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Toolbar>
+            </AppBar>
+
+            <Box mt={3}>
+        <Grid container spacing={1} direction="column" style={{ minHeight: '100vh' }}>
+          
+          {/* Your main content */}
+          <Grid item container direction="row" justifyContent="center" flex={1}>
+            <Grid item md={6}>
+              <Header
+                title={title}
+                setTitle={setTitle}
+                description={description}
+                setDescription={setDescription}
+              />
+              <Nestable
+                items={items}
+                renderItem={renderElements}
+                maxDepth={1}
+                onChange={handleOnChangeSort}
+              />
+            </Grid>
+            <Grid item md={1}>
+              <Tooltip title="Add Element" aria-label="add-element">
+                <IconButton
+                  aria-label="add-element"
+                  onClick={addElement}
+                  sx={{ position: "sticky", top: 30 }}
+                >
+                  <AddCircleOutlineOutlinedIcon color="secondary" />
+                </IconButton>
+              </Tooltip>
+            </Grid>
           </Grid>
-          <Grid item md={1}>
-            <Tooltip title="Add Element" aria-label="add-element">
-              <IconButton
-                aria-label="add-element"
-                onClick={addElement}
-                sx={{ position: "sticky", top: 30 }}
-              >
-                <AddCircleOutlineOutlinedIcon color="secondary" />
-              </IconButton>
-            </Tooltip>
+          
+          {/* Your button */}
+          <Grid item container justifyContent="center">
+            <Grid item md={1}>
+              <Tooltip title="Submit" aria-label="submit">
+                <Button variant="contained" color="secondary" onClick={handleSubmit}>
+                  Submit
+                </Button>
+              </Tooltip>
+            </Grid>
           </Grid>
+          
         </Grid>
-        
-        {/* Your button */}
-        <Grid item container justifyContent="center">
-          <Grid item md={1}>
-            <Tooltip title="Submit" aria-label="submit">
-              <Button variant="contained" color="primary" onClick={handleSubmit}>
-                Submit
-              </Button>
-            </Tooltip>
-          </Grid>
-        </Grid>
-        
-      </Grid>
+      </Box>
+
     </Fragment>
   );
   

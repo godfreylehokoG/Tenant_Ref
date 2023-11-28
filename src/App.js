@@ -14,8 +14,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FormBuilder from '@components/FormBuilder';
-import Preview from '@components/Preview'; // Make sure you've created this component as suggested earlier
+import Preview from '@components/Preview'; 
+import SendEmailPage from '@components/SendEmail/SendEmailPage';
+import Login from '@components/Login';
+import Register from '@components/Register';
 import 'react-nestable/dist/styles/index.css';
+
 
 const App = () => {
   return (
@@ -23,10 +27,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<FormBuilder />} />
         <Route path="/preview" element={<Preview />} />
+        <Route path="/send-email" element={<SendEmailPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
-

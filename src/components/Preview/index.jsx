@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; // import useNavigate
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import AppBar from '@material-ui/core/AppBar';
@@ -18,6 +18,7 @@ import {
 
 const Preview = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // use the hook here
   const formData = location.state?.formData;
 
   const renderElements = (item) => {
@@ -39,6 +40,10 @@ const Preview = () => {
     }
   };
 
+  const handleSendEmail = () => {
+    navigate('/send-email'); // navigate to the send email page
+  };
+
   return (
     <Grid container direction="column" spacing={1} style={{ minHeight: '100vh' }}>
       {/* Navbar */}
@@ -47,7 +52,7 @@ const Preview = () => {
           <Grid container justifyContent="center">
             <Grid item>
               <Typography variant="h6">
-                Tenant Reference
+                Tenant Reference - From Preview
               </Typography>
             </Grid>
           </Grid>
@@ -71,7 +76,7 @@ const Preview = () => {
           </Button>
         </Grid>
         <Grid item>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" onClick={handleSendEmail}> 
             Send Form
           </Button>
         </Grid>

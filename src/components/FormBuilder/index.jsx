@@ -279,7 +279,7 @@ const FormBuilder = () => {
                 <Grid container justifyContent="center">
                   <Grid item>
                     <Typography variant="h6">
-                      Tenant Reference
+                      Tenant Reference - Form Builder
                     </Typography>
                   </Grid>
                 </Grid>

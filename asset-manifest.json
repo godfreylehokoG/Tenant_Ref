@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/Tenant_Ref/static/js/main.c726d834.chunk.js",
+    "main.js.map": "/Tenant_Ref/static/js/main.c726d834.chunk.js.map",
+    "runtime-main.js": "/Tenant_Ref/static/js/runtime-main.3b0d0a06.js",
+    "runtime-main.js.map": "/Tenant_Ref/static/js/runtime-main.3b0d0a06.js.map",
+    "static/css/2.93e033d9.chunk.css": "/Tenant_Ref/static/css/2.93e033d9.chunk.css",
+    "static/js/2.5ee627da.chunk.js": "/Tenant_Ref/static/js/2.5ee627da.chunk.js",
+    "static/js/2.5ee627da.chunk.js.map": "/Tenant_Ref/static/js/2.5ee627da.chunk.js.map",
+    "index.html": "/Tenant_Ref/index.html",
+    "static/css/2.93e033d9.chunk.css.map": "/Tenant_Ref/static/css/2.93e033d9.chunk.css.map",
+    "static/js/2.5ee627da.chunk.js.LICENSE.txt": "/Tenant_Ref/static/js/2.5ee627da.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Tenant_Ref/static/media/icon-plus-gray.48135054.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b0d0a06.js",
+    "static/css/2.93e033d9.chunk.css",
+    "static/js/2.5ee627da.chunk.js",
+    "static/js/main.c726d834.chunk.js"
+  ]
+}
